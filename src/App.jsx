@@ -9,7 +9,7 @@ import NavBar from "./components/NavBar";
 function App() {
     return (
         <div className="snap-y snap-mandatory h-screen w-screen overflow-auto overflow-x-hidden scroll-smooth">
-            <NavBar />
+            {/* <NavBar /> */}
             <Intro />
             <Education />
             <Skills />

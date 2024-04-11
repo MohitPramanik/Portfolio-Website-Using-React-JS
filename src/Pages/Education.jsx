@@ -40,7 +40,9 @@ const Education = () => {
             id="education"
             className="snap-start bg-slate-900 text-white min-h-screen w-screen flex flex-col"
         >
-            <h2 className="text-white text-6xl h-24 p-8">My Education</h2>
+            <h2 className="text-white text-center sm:text-start text-[11vw] sm:text-6xl h-max p-8 sm:pt-[63px] border-b-[1px] border-blue-300 sm:border-0">
+                My Education
+            </h2>
             <div className="flex justify-center items-center gap-10 h-full flex-wrap p-7">
                 {colleges.map((college) => (
                     <EducationCards key={college.id} college={college} />

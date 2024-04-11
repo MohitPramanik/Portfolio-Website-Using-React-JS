@@ -7,17 +7,20 @@ const Intro = () => {
     return (
         <div
             id="intro"
-            className="snap-start bg-slate-900 text-white h-screen w-screen flex justify-center items-center"
+            className="snap-start bg-slate-900 text-white h-screen w-screen flex justify-center items-center flex-col lg:flex-row gap-[3vh] lg:gap-0"
         >
-            <div className="w-2/3 flex ps-8 justify-center items-center">
-                <AutoText />
+            <div className="w-full lg:w-5/6 flex lg:ps-8 justify-center flex-col lg:items-start items-center order-1 text-[5vw] ">
+                <p>Hello there, </p>
+                <p>
+                    I am <AutoText />
+                </p>
             </div>
-            <div className="w-1/2 flex justify-center items-center ">
-                <div className="h-[400px] w-[400px] border-4 border-blue-500 shape overflow-hidden shape">
+            <div className="w-[60%] lg:w-1/2 h-max lg:h-full flex justify-center items-center lg:order-2">
+                <div className="w-[57vw] h-[57vw] md:h-[400px] md:w-[400px] border-4 border-blue-500 shape overflow-hidden shape">
                     <img
                         src={Photo}
                         alt="Error Loading Image"
-                        className="h-[70vh] rounded-xl"
+                        className="h-full w-full object-cover rounded-xl"
                     />
                 </div>
             </div>

@@ -28,16 +28,17 @@ const Contact = () => {
     return (
         <div
             id="contact"
-            className="snap-start bg-slate-900 text-white h-screen w-screen flex justify-center items-center"
+            className="snap-start bg-slate-900 text-white min-h-screen w-screen flex justify-center items-center flex-col lg:flex-row"
         >
-            <div className="h-max w-1/2 pb-9 bg-blue-950 rounded-2xl overflow-hidden m-auto">
+            {/* Contact-form */}
+            <div className="h-max w-[90%] lg:w-1/2 pb-9 bg-blue-950 rounded-2xl overflow-hidden m-auto my-6">
                 <h2 className="text-center text-4xl font-bold p-6 bg-gradient-to-r from-black to-[#3d69eb]">
                     Contact Us
                 </h2>
                 <div className="flex justify-center items-center">
                     <form
                         action=""
-                        className="flex flex-col gap-6 w-5/6 p-5 text-black"
+                        className="flex flex-col gap-6 w-[90%] sm:w-5/6 p-5 text-black"
                         onSubmit={(e) => {
                             e.preventDefault();
                             handleSubmit();
@@ -50,7 +51,7 @@ const Contact = () => {
                             ref={name}
                         />
                         <input
-                            type="eamil"
+                            type="email"
                             className="p-2 rounded-md focus:outline-sky-600 focus:outline-4"
                             placeholder="Enter your email"
                             ref={email}
@@ -75,7 +76,8 @@ const Contact = () => {
                 </div>
             </div>
 
-            <div className="w-1/4 h-full flex justify-center items-center bg-slate-800 flex-col">
+            {/* Social-media link section */}
+            <div className="w-screen lg:w-1/4 h-max lg:h-screen py-9 flex justify-center items-center bg-slate-800 flex-col text-center lg:text-start">
                 <div className="m-4 flex flex-col gap-6">
                     <div>
                         <p>Connect with me</p>
@@ -91,7 +93,7 @@ const Contact = () => {
                             </button>
                         </p>
                     </div>
-                    <div className="flex gap-3 text-xl">
+                    <div className="flex gap-3 text-xl justify-center lg:justify-start">
                         <a
                             href="https://www.instagram.com/mohitpramanik_/?next=%2F"
                             target="_blank"
@@ -124,7 +126,7 @@ const Contact = () => {
                 </div>
 
                 <a href={Resume} download>
-                    <button className="resume-btn px-6 py-3 bg-pink-700 hover:bg-red-600 rounded-full w-max font-bold text-xl flex flex-nowrap gap-2 items-center active:bg-blue-500">
+                    <button className="resume-btn px-8 lg:px-6 py-3 m-3 lg:m-0 bg-pink-700 hover:bg-red-600 rounded-full w-max font-bold text-xl flex flex-nowrap gap-2 items-center active:bg-blue-500">
                         Resume <FaDownload className="download-btn" />
                     </button>
                 </a>

@@ -43,7 +43,7 @@ const Skills = () => {
             scrollTrigger: {
                 trigger: ".scrollArea",
                 scroller: scrollBox.current,
-                start: "center 45%",
+                start: "center 30vw",
                 end: "2000 top",
                 scrub: 1,
                 // markers: true,
@@ -54,19 +54,19 @@ const Skills = () => {
     return (
         <div
             id="skills"
-            className="snap-start bg-slate-900 text-white h-screen w-screen flex"
+            className="snap-start bg-slate-900 text-white h-screen w-screen flex flex-col lg:flex-row"
         >
-            <div className="h-full w-[20vw] bg-violet-700 flex justify-center items-center">
+            <div className="h-max lg:h-full p-10 lg:p-0 w-screen lg:w-[20vw] bg-violet-700 flex justify-center items-center ">
                 <h2
-                    className="text-6xl font-bold"
+                    className="text-[11vw] sm:text-6xl font-bold"
                     style={{ fontFamily: "cursive" }}
                 >
                     My Skills
                 </h2>
             </div>
-            <div className="h-full w-[80%] flex justify-center items-center flex-col ">
+            <div className="h-full w-full lg:w-[80vw] flex justify-center items-center flex-col ">
                 <div
-                    className="h-80 w-[80%] overflow-x-hidden right-scroller-section"
+                    className="h-80 w-[90%] lg:w-[80%] overflow-x-hidden right-scroller-section"
                     ref={scrollBox}
                 >
                     <div className="h-[400vh] w-full ">
@@ -75,14 +75,17 @@ const Skills = () => {
                             ref={scrollArea}
                         >
                             {programmingLanguages.map((item, index) => (
-                                <div className="h-[319px] w-auto" key={index}>
+                                <div
+                                    className="h-[30vw] lg:h-[319px] w-auto"
+                                    key={index}
+                                >
                                     <img src={item} className="h-full mx-6" />
                                 </div>
                             ))}
                         </div>
                     </div>
                 </div>
-                <div className="text-xl mt-20">
+                <div className="text-md lg:text-xl text-center lg:mt-20">
                     Scroll on above images to see the rest others
                 </div>
             </div>

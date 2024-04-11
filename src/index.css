@@ -64,15 +64,6 @@
     display: none;
 }
 
-/* input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-} */
-
-/* input[type=number] {
-    -moz-appearance: textfield;
-} */
-
 .resume-btn:hover .download-btn {
     animation-name: bounce;
     animation-duration: 1s;

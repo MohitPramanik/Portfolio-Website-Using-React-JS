@@ -24,17 +24,15 @@ const AutoText = () => {
     }, []);
 
     return (
-        <div ref={animationRef}>
+        <div ref={animationRef} className="inline text-sky-400">
             {isVisible && (
                 <TypeAnimation
                     sequence={[
-                        "Hello there, ",
+                        "Mohit",
                         1000,
-                        "I am Mohit",
+                        "a Frontend Developer",
                         1000,
-                        "I am a Frontend Developer",
-                        1000,
-                        "I am a Web Developer",
+                        "a Web Developer",
                         1000,
                     ]}
                     wrapper="span"
