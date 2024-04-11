@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+    width: 6px;
+    background-color: #0f172a;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.308);
+    border-radius: 20px;
+    width: 3px !important;
+    height: 2px;
+    cursor: pointer;
+}
+
+#navbar {
+    transition: all ease-in-out 2s;
+}
+
+.shape {
+    border-radius: 50% 45% 55% 60%;
+    animation-name: rotate;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    background-color: white;
+}
+
+@keyframes rotate {
+    0% {
+        border-radius: 50% 45% 55% 60%;
+    }
+
+    25% {
+        border-radius: 45% 55% 60% 50%;
+    }
+
+    50% {
+        border-radius: 55% 60% 50% 45%;
+    }
+
+    75% {
+        border-radius: 60% 50% 45% 55%;
+    }
+
+    100% {
+        border-radius: 50% 45% 55% 60%;
+    }
+}
+
+.card:hover .card-text {
+    bottom: 0;
+}
+
+.right-scroller-section::-webkit-scrollbar {
+    display: none;
+}
+
+/* input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+} */
+
+/* input[type=number] {
+    -moz-appearance: textfield;
+} */
+
+.resume-btn:hover .download-btn {
+    animation-name: bounce;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    33% {
+        transform: translateY(-5px);
+    }
+
+    66% {
+        transform: translateY(5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
