@@ -2,7 +2,7 @@ import React from "react";
 
 function ProjectCard({ project }) {
     return (
-        <div className="h-max md:h-[480px] w-full sm:w-[400px] shadow hover:shadow-lg hover:shadow-blue-500 bg-black shadow-blue-500 rounded-lg sm:rounded-3xl flex flex-col items-center sm:justify-center overflow-hidden">
+        <div className="h-max md:h-[480px] w-full sm:w-[400px] shadow hover:shadow-lg hover:shadow-blue-500 bg-black shadow-blue-500 rounded-lg sm:rounded-3xl flex flex-col items-center sm:justify-center overflow-hidden pb-14">
             <div className="image-section h-max sm:h-3/5 w-full flex justify-center items-center p-3 md:pt-0">
                 <div className="h-full sm:h-5/6 border-2 border-violet-300 rounded-md sm:rounded-lg">
                     <img
