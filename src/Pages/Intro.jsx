@@ -11,9 +11,9 @@ const Intro = () => {
         >
             <div className="w-full lg:w-5/6 flex lg:ps-8 justify-center flex-col lg:items-start items-center order-1 text-[5vw] ">
                 <p>Hello there, </p>
-                <p>
+                <div>
                     I am <AutoText />
-                </p>
+                </div>
             </div>
             <div className="w-[60%] lg:w-1/2 h-max lg:h-full flex justify-center items-center lg:order-2">
                 <div className="w-[57vw] h-[57vw] md:h-[400px] md:w-[400px] border-4 border-blue-500 shape overflow-hidden shape">

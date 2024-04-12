@@ -85,8 +85,8 @@ const Skills = () => {
                         </div>
                     </div>
                 </div>
-                <div className="text-md lg:text-xl text-center lg:mt-20">
-                    Scroll on above images to see the rest others
+                <div className="text-md lg:text-xl text-center lg:mt-20 p-3">
+                    Scroll down over the above images to see the rest others
                 </div>
             </div>
         </div>

@@ -22,8 +22,15 @@
 }
 
 #navbar {
-    transition: all ease-in-out 2s;
+    transition: all ease-in-out 0.3s;
+    /* top: 0 !important; */
 }
+
+#navbar ul li {
+    padding: 2vw;
+}
+
+
 
 .shape {
     border-radius: 50% 45% 55% 60%;
