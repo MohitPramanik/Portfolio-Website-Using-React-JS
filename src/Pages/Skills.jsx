@@ -12,6 +12,8 @@ import MySQL from "../Images/Programming Languages/mysql.png";
 import NodeJs from "../Images/Programming Languages/nodeJs.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Reveal } from "react-awesome-reveal";
+import customAnimation from "../components/CustomAnimation";
 
 const Skills = () => {
     const programmingLanguages = [
@@ -46,7 +48,7 @@ const Skills = () => {
                 start: "center 30vw",
                 end: "2000 top",
                 scrub: 1,
-                // markers: true,
+                markers: true,
             },
         });
     }, []);
@@ -61,7 +63,13 @@ const Skills = () => {
                     className="text-[11vw] sm:text-6xl font-bold"
                     style={{ fontFamily: "cursive" }}
                 >
-                    My Skills
+                    <Reveal
+                        keyframes={customAnimation}
+                        triggerOnce={true}
+                        duration={2000}
+                    >
+                        My Skills
+                    </Reveal>
                 </h2>
             </div>
             <div className="h-full w-full lg:w-[80vw] flex justify-center items-center flex-col ">
@@ -86,7 +94,13 @@ const Skills = () => {
                     </div>
                 </div>
                 <div className="text-md lg:text-xl text-center lg:mt-20 p-3">
-                    Scroll down over the above images to see the rest others
+                    <Reveal
+                        keyframes={customAnimation}
+                        duration={1000}
+                        triggerOnce={true}
+                    >
+                        Scroll down over the above images to see the rest others
+                    </Reveal>
                 </div>
             </div>
         </div>

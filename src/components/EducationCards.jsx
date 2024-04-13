@@ -1,5 +1,4 @@
 import React from "react";
-import Dspmu from "../Images/College Buildings/dspmu.jpg";
 
 function EducationCards({ college }) {
     return (
