@@ -1,17 +1,26 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Photo from "../Images/College Buildings/dspmu.jpg";
 import { Divide as Hamburger } from "hamburger-react";
+import gsap from "gsap";
 
 function NavBar({ ishidden, isActive, setIsActive }) {
     const navbar = useRef(null);
 
-    // useEffect(() => {
-    //     if (isActive) {
-    //         console.log("Active");
-    //     } else {
-    //         console.log("NOt active");
-    //     }
-    // }, [isActive]);
+    useEffect(() => {
+        const tl = gsap.timeline({});
+
+        tl.fromTo(
+            "ul>li, #nav-logo",
+            { y: 40, opacity: -1 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 2,
+                ease: "power1.inOut",
+                stagger: 0.2,
+            }
+        );
+    }, []);
 
     return (
         <div
@@ -21,7 +30,10 @@ function NavBar({ ishidden, isActive, setIsActive }) {
              z-10`}
         >
             <nav className="h-full w-full flex justify-between flex-col md:flex-row relative">
-                <div className="text-white h-full py-4 w-full md:w-[20%] flex justify-between items-center z-30 backdrop-blur-sm">
+                <div
+                    id="nav-logo"
+                    className="text-white h-full py-4 w-full md:w-[20%] flex justify-between items-center z-30 backdrop-blur-sm"
+                >
                     <span className=" ms-10 border-2 h-[40px] w-[40px] border-white rounded-full overflow-hidden">
                         <img
                             src={Photo}

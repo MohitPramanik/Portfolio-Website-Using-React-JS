@@ -28,11 +28,11 @@ const AutoText = () => {
             {isVisible && (
                 <TypeAnimation
                     sequence={[
+                        "a Web Developer",
+                        1000,
                         "Mohit",
                         1000,
                         "a Frontend Developer",
-                        1000,
-                        "a Web Developer",
                         1000,
                     ]}
                     wrapper="span"
