@@ -1,7 +1,7 @@
 {
   "homepage": "https://MohitPramanik.github.io/Portfolio-Website-Using-React-JS",
   "name": "portfolio-website",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
