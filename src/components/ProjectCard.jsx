@@ -1,8 +1,37 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import React from "react";
 
 function ProjectCard({ project }) {
+    useGSAP(() => {
+        const cards = gsap.utils.toArray(".project-card");
+        cards.forEach((card) => {
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: card,
+                    scrub: 4,
+                    start: "-100 70%",
+                    end: "-100 70%",
+                    // markers: true,
+                    scroller: "#project-scroller",
+                    // once: true,
+                },
+            }).fromTo(
+                card,
+                {
+                    y: 100,
+                    opacity: 0,
+                },
+                {
+                    y: 0,
+                    opacity: 1,
+                }
+            );
+        });
+    });
+
     return (
-        <div className="h-max md:h-[480px] w-full sm:w-[400px] shadow hover:shadow-lg hover:shadow-blue-500 bg-black shadow-blue-500 rounded-lg sm:rounded-3xl flex flex-col items-center sm:justify-center overflow-hidden pb-14">
+        <div className="h-max md:h-[480px] w-full sm:w-[400px] shadow hover:shadow-lg hover:shadow-blue-500 bg-black shadow-blue-500 rounded-lg sm:rounded-3xl flex flex-col items-center sm:justify-center overflow-hidden pb-14 project-card">
             <div className="image-section h-max sm:h-3/5 w-full flex justify-center items-center p-3 md:pt-0">
                 <div className="h-full sm:h-5/6 border-2 border-violet-300 rounded-md sm:rounded-lg">
                     <img

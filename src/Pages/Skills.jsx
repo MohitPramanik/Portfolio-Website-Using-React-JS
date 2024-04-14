@@ -11,9 +11,8 @@ import Java from "../Images/Programming Languages/java.png";
 import MySQL from "../Images/Programming Languages/mysql.png";
 import NodeJs from "../Images/Programming Languages/nodeJs.png";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Reveal } from "react-awesome-reveal";
-import customAnimation from "../components/CustomAnimation";
 
 const Skills = () => {
     const programmingLanguages = [
@@ -35,7 +34,7 @@ const Skills = () => {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    useEffect(() => {
+    useGSAP(() => {
         const scrollLength =
             scrollArea.current.scrollWidth - scrollBox.current.offsetWidth;
 
@@ -48,28 +47,61 @@ const Skills = () => {
                 start: "center 30vw",
                 end: "2000 top",
                 scrub: 1,
-                markers: true,
+                // markers: true,
             },
         });
-    }, []);
+    });
+
+    useGSAP(() => {
+        gsap.from("#skills-heading", {
+            y: -100,
+            opacity: 0,
+            duration: 1,
+            scrollTrigger: {
+                trigger: "#skills",
+                scrub: 4,
+                start: "top 20%",
+                end: "top top",
+                // markers: true,
+                scroller: "#app-component",
+                // once: true,
+            },
+        });
+
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: "#skills-heading",
+                scrub: 4,
+                start: "bottom 70%",
+                end: "end 50%",
+                // markers: true,
+                scroller: "#app-component",
+                // once: true,
+            },
+        })
+            .from(scrollBox.current, {
+                x: 100,
+                opacity: 0,
+                duration: 2,
+            })
+            .from(" #scroll-info", {
+                y: 100,
+                opacity: 0,
+            });
+    });
 
     return (
         <div
             id="skills"
             className="snap-start bg-slate-900 text-white h-screen w-screen flex flex-col lg:flex-row"
         >
-            <div className="h-max lg:h-full p-10 lg:p-0 w-screen lg:w-[20vw] bg-violet-700 flex justify-center items-center ">
+            <div className="h-max lg:h-full text-center p-10 lg:p-0 w-screen lg:w-[20vw] bg-violet-700 flex justify-center items-center overflow-hidden ">
                 <h2
+                    id="skills-heading"
                     className="text-[11vw] sm:text-6xl font-bold"
                     style={{ fontFamily: "cursive" }}
                 >
-                    <Reveal
-                        keyframes={customAnimation}
-                        triggerOnce={true}
-                        duration={2000}
-                    >
-                        My Skills
-                    </Reveal>
+                    My Skills
                 </h2>
             </div>
             <div className="h-full w-full lg:w-[80vw] flex justify-center items-center flex-col ">
@@ -93,14 +125,11 @@ const Skills = () => {
                         </div>
                     </div>
                 </div>
-                <div className="text-md lg:text-xl text-center lg:mt-20 p-3">
-                    <Reveal
-                        keyframes={customAnimation}
-                        duration={1000}
-                        triggerOnce={true}
-                    >
-                        Scroll down over the above images to see the rest others
-                    </Reveal>
+                <div
+                    id="scroll-info"
+                    className="text-md lg:text-xl text-center lg:mt-20 p-3"
+                >
+                    Scroll Here to move down
                 </div>
             </div>
         </div>

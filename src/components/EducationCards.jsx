@@ -1,8 +1,39 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import React from "react";
 
 function EducationCards({ college }) {
+    useGSAP(() => {
+        const cards = gsap.utils.toArray(".card");
+        cards.forEach((card) => {
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: card,
+                    scrub: 4,
+                    start: "-100 70%",
+                    end: "-100 70%",
+                    // markers: true,
+                    scroller: "#app-component",
+                    // once: true,
+                },
+            }).fromTo(
+                card,
+                {
+                    y: 100,
+                    opacity: 0,
+                },
+                {
+                    y: 0,
+                    opacity: 1,
+                }
+            );
+        });
+    });
+
     return (
-        <div className="flex flex-col border border-white overflow-hidden h-[66vw] sm:h-[490px] w-full sm:w-[440px] rounded-md sm:rounded-2xl relative card">
+        <div
+            className={`flex flex-col border border-white overflow-hidden h-[66vw] sm:h-[490px] w-full sm:w-[440px] rounded-md sm:rounded-2xl relative card`}
+        >
             <div className="h-full w-full">
                 <img
                     src={college.image}

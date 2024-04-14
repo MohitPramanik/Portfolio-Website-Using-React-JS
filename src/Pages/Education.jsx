@@ -1,37 +1,41 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect } from "react";
 import EducationCards from "../components/EducationCards";
 import colleges from "../Data-Files/Colleges";
-import { Reveal } from "react-awesome-reveal";
-import customAnimation from "../components/CustomAnimation";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const Education = () => {
+    useGSAP(() => {
+        gsap.from("#education-heading", {
+            x: 100,
+            opacity: 0,
+            duration: 1,
+            scrollTrigger: {
+                trigger: "#education",
+                scrub: 4,
+                start: "top 70%",
+                end: "top top",
+                // markers: true,
+                scroller: "#app-component",
+                // once: true,
+            },
+        });
+    });
+
     return (
         <div
             id="education"
-            className="snap-start bg-slate-900 text-white min-h-screen w-screen flex flex-col"
+            className="snap-start bg-slate-900 text-white min-h-screen w-screen flex flex-col overflow-hidden pb-20 md:pb-0"
         >
             <h2
                 id="education-heading"
-                className="text-white text-center sm:text-start text-[11vw] sm:text-6xl h-max p-8 sm:pt-[63px] border-b-[1px] border-blue-300 sm:border-0"
+                className="text-white text-center sm:text-start text-[11vw] sm:text-6xl h-max p-8 sm:pt-[63px] border-b-[1px] border-blue-300 sm:border-0 "
             >
-                <Reveal triggerOnce={true} duration={1000}>
-                    My Education
-                </Reveal>
+                My Education
             </h2>
             <div className="flex justify-center items-center gap-10 h-full flex-wrap p-7">
                 {colleges.map((college) => (
-                    <Reveal
-                        keyframes={customAnimation}
-                        direction="up"
-                        duration={2000}
-                        delay={1000}
-                        triggerOnce={true}
-                        cascade={true}
-                        damping={1}
-                        key={college.id}
-                    >
-                        <EducationCards college={college} />
-                    </Reveal>
+                    <EducationCards key={college.id} college={college} />
                 ))}
             </div>
         </div>

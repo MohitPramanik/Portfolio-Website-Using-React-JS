@@ -11,6 +11,9 @@ function App() {
     const [isNavbarHidden, setIsNavbarHidden] = useState(false);
     const [lastScrollTop, setLastScrollTop] = useState(0);
     const [isActive, setIsActive] = useState(false);
+    const [isVisitedEducationSection, setIsVisitedEducationSection] =
+        useState(false);
+    const [isVisitedSkillsSection, setIsVisitedSkillsSection] = useState(false);
 
     // to show and hide navbar on up scroll and down scroll respectively
     const handleScroll = () => {
@@ -35,6 +38,7 @@ function App() {
 
     return (
         <div
+            id="app-component"
             className="snap-y snap-mandatory h-screen w-screen overflow-auto overflow-x-hidden scroll-smooth"
             ref={appRef}
             onScroll={handleScroll}
