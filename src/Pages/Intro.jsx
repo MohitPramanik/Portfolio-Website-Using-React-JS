@@ -1,11 +1,12 @@
 // Intro.jsx
-import React, { useEffect } from "react";
+import React from "react";
 import AutoText from "../components/AutoText";
 import Photo from "../Images/Photo.jpg";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const Intro = () => {
-    useEffect(() => {
+    useGSAP(() => {
         const tl = gsap.timeline();
 
         tl.fromTo(
@@ -18,7 +19,7 @@ const Intro = () => {
                 ease: "power1",
             }
         );
-    }, []);
+    });
 
     return (
         <div
