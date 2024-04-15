@@ -120,7 +120,7 @@ const Contact = () => {
             {/* Social-media link section */}
             <div
                 id="linkArea"
-                className="w-screen lg:w-[30%] xl:w-1/4 h-max lg:h-screen py-9 flex justify-center items-center bg-slate-800 flex-col text-center lg:text-start"
+                className="w-screen lg:w-[30%] xl:w-1/4 h-max lg:h-screen py-16 flex justify-center items-center bg-slate-800 flex-col text-center lg:text-start"
             >
                 <div className="m-4 flex flex-col gap-6">
                     <div>
