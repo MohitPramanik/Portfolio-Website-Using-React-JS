@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import C from "../Images/Programming Languages/c.png";
 import Cpp from "../Images/Programming Languages/cpp.png";
 import Html from "../Images/Programming Languages/html.png";
