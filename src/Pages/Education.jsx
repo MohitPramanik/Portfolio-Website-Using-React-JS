@@ -5,6 +5,8 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 const Education = () => {
+    gsap.registerPlugin(useGSAP);
+
     useGSAP(() => {
         gsap.from("#education-heading", {
             x: 100,

@@ -24,6 +24,8 @@ const Contact = () => {
         message.current.value = "";
     }
 
+    gsap.registerPlugin(useGSAP);
+
     useGSAP(() => {
         const elements = [
             "#form-heading",

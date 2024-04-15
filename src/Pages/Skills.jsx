@@ -32,7 +32,7 @@ const Skills = () => {
     const scrollArea = useRef(null);
     const scrollBox = useRef(null);
 
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger, useGSAP);
 
     useGSAP(() => {
         const scrollLength =

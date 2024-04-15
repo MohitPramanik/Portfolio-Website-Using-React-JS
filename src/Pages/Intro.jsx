@@ -6,6 +6,8 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 const Intro = () => {
+    gsap.registerPlugin(useGSAP);
+
     useGSAP(() => {
         const tl = gsap.timeline();
 

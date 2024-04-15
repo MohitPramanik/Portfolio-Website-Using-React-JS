@@ -5,6 +5,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const Projects = () => {
+    gsap.registerPlugin(useGSAP);
+
     useGSAP(() => {
         gsap.from("#project-heading", {
             x: -100,
