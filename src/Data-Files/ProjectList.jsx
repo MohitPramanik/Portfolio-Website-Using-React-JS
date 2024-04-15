@@ -18,9 +18,9 @@ const projectList = [
         projectId: 2,
         projectName: "Clone of E-Kalyan Website",
         projectDescription:
-            "Created using HTML, CSS and JavaScript. It contains only the frontend part of the website. I didn't hosted it due to copyright issues. But you can check it on my linked in post whose link I have provided here.",
+            "Created using HTML, CSS and JavaScript. It contains only the frontend part of the website. And I tried to implement most of the features of the original one.",
         projectLink:
-            "https://www.linkedin.com/posts/mohit-kumar-pramanik-498808271_website-project-activity-7120797165358043137-81zj/?utm_source=share&utm_medium=member_desktop",
+            "https://mohitpramanik.github.io/E-kalyan-website-clone/HTML/index.html",
         projectImage: EKalyan,
     },
     {
@@ -44,9 +44,9 @@ const projectList = [
         projectId: 5,
         projectName: "Clone of Dspmu Website",
         projectDescription:
-            "Created using HTML, CSS and JavaScript. It contains only the frontend part of the website. I didn't hosted it again due to copyright issues. But you can check it on my linked in post whose link I have provided here.",
+            "Created using HTML, CSS and JavaScript. It contains only the frontend part of the website. And I tried to implement most of the features of the original one.",
         projectLink:
-            "https://www.linkedin.com/posts/mohit-kumar-pramanik-498808271_website-project-activity-7120783427456389121-92F1/?utm_source=share&utm_medium=member_desktop",
+            "https://mohitpramanik.github.io/DSPMU-wesbsite-clone/HTML/",
         projectImage: Dspmu,
     },
     {
