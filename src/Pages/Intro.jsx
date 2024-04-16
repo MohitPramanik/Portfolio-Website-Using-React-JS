@@ -1,7 +1,7 @@
 // Intro.jsx
 import React from "react";
 import AutoText from "../components/AutoText";
-import Photo from "../Images/Photo.jpg";
+import Photo from "../Images/Photo.jpeg";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -45,7 +45,7 @@ const Intro = () => {
                     <img
                         src={Photo}
                         alt="Error Loading Image"
-                        className="h-full w-full object-cover rounded-xl"
+                        className="h-full w-full object-cover rounded-xl img-filter"
                     />
                 </div>
             </div>
