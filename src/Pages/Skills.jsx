@@ -44,10 +44,11 @@ const Skills = () => {
             scrollTrigger: {
                 trigger: ".scrollArea",
                 scroller: scrollBox.current,
-                start: "center 30vw",
-                end: "2000 top",
+                start: "center 160px",
+                end: "2000 160px",
                 scrub: 1,
                 // markers: true,
+                pin: true,
             },
         });
     });
@@ -103,7 +104,7 @@ const Skills = () => {
                     className="h-80 w-[90%] lg:w-[80%] overflow-x-hidden right-scroller-section"
                     ref={scrollBox}
                 >
-                    <div className="h-[400vh] w-full ">
+                    <div className="h-[400vh]- w-full ">
                         <div
                             className="flex flex-nowrap w-max h-max scrollArea sticky top-0 pe-4 "
                             ref={scrollArea}
