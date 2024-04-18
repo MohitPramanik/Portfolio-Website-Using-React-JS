@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import C from "../Images/Programming Languages/c.png";
 import Cpp from "../Images/Programming Languages/cpp.png";
 import Html from "../Images/Programming Languages/html.png";
@@ -34,7 +34,7 @@ const Skills = () => {
 
     gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-    useGSAP(() => {
+    useEffect(() => {
         const scrollLength =
             scrollArea.current.scrollWidth - scrollBox.current.offsetWidth;
 
@@ -50,7 +50,7 @@ const Skills = () => {
                 // markers: true,
             },
         });
-    });
+    }, []);
 
     useGSAP(() => {
         gsap.from("#skills-heading", {
