@@ -94,7 +94,7 @@ const Skills = () => {
             </div>
 
             <div className="h-full w-full lg:w-[80vw] flex justify-center items-center flex-col ">
-                <div id="wrapper" className="w-[90%] h-max overflow-scroll">
+                <div id="wrapper" className="w-[90%] h-max overflow-auto">
                     <div
                         id="scrollable"
                         className="flex flex-nowrap gap-5 w-max px-4 pb-5"
