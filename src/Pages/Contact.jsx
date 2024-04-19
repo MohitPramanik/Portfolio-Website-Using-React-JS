@@ -1,30 +1,45 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { MdEmail } from "react-icons/md";
 import { FaDownload } from "react-icons/fa6";
 import Resume from "../Pdfs/Resume.pdf";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import linkButtons from "../Data-Files/LinkButtons";
+import emailjs from "@emailjs/browser";
+import NotificationMsg from "../components/NotificationMsg";
 
 const Contact = () => {
+    const [success, setSuccess] = useState(true);
+    const [clicked, setClicked] = useState(0);
+
     const name = useRef(null);
     const email = useRef(null);
     const address = useRef(null);
     const message = useRef(null);
 
     function handleSubmit() {
-        console.log(name.current.value);
-        console.log(email.current.value);
-        console.log(address.current.value);
-        console.log(message.current.value);
+        emailjs
+            .sendForm("service_1snpyoi", "template_ulxptlc", "#contact-form", {
+                publicKey: "kNFe0iWcz-n0QIeAo",
+            })
+            .then(
+                () => {
+                    setSuccess(true);
+                },
+                (error) => {
+                    setSuccess(false);
+                }
+            );
 
         name.current.value = "";
         email.current.value = "";
         address.current.value = "";
         message.current.value = "";
+
+        setClicked(clicked + 1);
     }
 
-    gsap.registerPlugin(useGSAP);
+    gsap.registerPlugin(!clicked);
 
     useGSAP(() => {
         const elements = [
@@ -63,8 +78,13 @@ const Contact = () => {
     return (
         <div
             id="contact"
-            className="snap-start bg-slate-900 text-white min-h-screen w-screen flex justify-center items-center flex-col lg:flex-row"
+            className="snap-start bg-slate-900 text-white min-h-screen w-screen flex justify-center items-center flex-col lg:flex-row relative"
         >
+            {/* Message notification to say if sent successfully or not */}
+            {clicked != 0 && (
+                <NotificationMsg success={success} clicked={clicked} />
+            )}
+
             {/* Contact-form */}
             <div
                 id="formArea"
@@ -78,7 +98,7 @@ const Contact = () => {
                 </h2>
                 <div className="flex justify-center items-center">
                     <form
-                        action=""
+                        id="contact-form"
                         className="flex flex-col gap-6 w-[90%] sm:w-5/6 p-5 text-black z-0 overflow-hidden"
                         onSubmit={(e) => {
                             e.preventDefault();
@@ -89,18 +109,24 @@ const Contact = () => {
                             type="text"
                             className="p-2 rounded-md focus:outline-sky-600 focus:outline-4 fill-box"
                             placeholder="Enter your name"
+                            name="from_name"
+                            required
                             ref={name}
                         />
                         <input
                             type="email"
                             className="p-2 rounded-md focus:outline-sky-600 focus:outline-4 fill-box"
                             placeholder="Enter your email"
+                            name="email"
+                            required
                             ref={email}
                         />
                         <input
                             type="text"
                             className="p-2 rounded-md focus:outline-sky-600 focus:outline-4 fill-box"
                             placeholder="Enter your address"
+                            name="address"
+                            required
                             ref={address}
                         />
                         <textarea
@@ -108,6 +134,8 @@ const Contact = () => {
                             rows="5"
                             className="resize-none p-2 rounded-md focus:outline-sky-600 focus:outline-4 fill-box"
                             placeholder="Enter your message"
+                            name="message"
+                            required
                             ref={message}
                         ></textarea>
                         <button className="bg-blue-600 p-3 rounded-md hover:bg-blue-700 font-bold text-white active:bg-emerald-600">

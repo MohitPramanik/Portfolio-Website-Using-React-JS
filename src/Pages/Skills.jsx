@@ -68,6 +68,7 @@ const Skills = () => {
         scrollable.addEventListener(
             "wheel",
             (e) => {
+                // e.preventDefault();
                 if (e.wheelDelta > 0) {
                     scrollable.scrollLeft -= 50;
                 } else {
@@ -83,7 +84,7 @@ const Skills = () => {
             id="skills"
             className="snap-start bg-slate-900 text-white h-screen w-screen flex flex-col lg:flex-row"
         >
-            <div className="h-max lg:h-full text-center p-10 lg:p-0 w-screen lg:w-[20vw] bg-violet-700 flex justify-center items-center overflow-hidden ">
+            <div className="h-max lg:h-full text-center p-10 lg:p-0 w-screen lg:w-[20vw] bg-violet-700 flex justify-center items-center gap-9 overflow-hidden ">
                 <h2
                     id="skills-heading"
                     className="text-[11vw] sm:text-6xl font-bold"
@@ -97,7 +98,7 @@ const Skills = () => {
                 <div id="wrapper" className="w-[90%] h-max overflow-auto">
                     <div
                         id="scrollable"
-                        className="flex flex-nowrap gap-5 w-max px-4 pb-5"
+                        className="flex flex-nowrap gap-10 w-max px-4 pb-5"
                     >
                         {programmingLanguages.map((item, index) => (
                             <div key={index} className="h-[25vw]">
@@ -113,7 +114,7 @@ const Skills = () => {
 
                 <div
                     id="scroll-info"
-                    className="text-md lg:text-xl text-center lg:mt-20 p-3"
+                    className="text-md lg:text-xl text-center mt-[54px] lg:mt-20 p-3"
                 >
                     Scroll Here to move down
                 </div>

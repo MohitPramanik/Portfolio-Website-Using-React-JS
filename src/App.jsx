@@ -27,7 +27,7 @@ function App() {
         if (!isActive) {
             const interval = setTimeout(() => {
                 setIsNavbarHidden(true);
-                console.log("running");
+                // console.log("running");
             }, 4000);
             return () => clearInterval(interval);
         }
