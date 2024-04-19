@@ -45,9 +45,9 @@ const Skills = () => {
                 trigger: ".scrollArea",
                 scroller: scrollBox.current,
                 start: "center 160px",
-                end: "2000 160px",
+                end: "2000 320px",
                 scrub: 1,
-                // markers: true,
+                markers: true,
                 pin: true,
             },
         });
@@ -79,10 +79,16 @@ const Skills = () => {
                 scroller: "#app-component",
                 // once: true,
             },
-        }).from(" #scroll-info", {
-            y: 100,
-            opacity: 0,
-        });
+        })
+            .from(scrollBox.current, {
+                x: 100,
+                opacity: 0,
+                duration: 2,
+            })
+            .from(" #scroll-info", {
+                y: 100,
+                opacity: 0,
+            });
     });
 
     return (
@@ -104,9 +110,9 @@ const Skills = () => {
                     className="h-80 w-[90%] lg:w-[80%] overflow-x-hidden right-scroller-section"
                     ref={scrollBox}
                 >
-                    <div className="h-[400vh]- w-full ">
+                    <div className="h-max w-full ">
                         <div
-                            className="flex flex-nowrap w-max h-max scrollArea sticky top-0 pe-4 "
+                            className="flex flex-nowrap w-max h-max scrollArea  pe-4 "
                             ref={scrollArea}
                         >
                             {programmingLanguages.map((item, index) => (
