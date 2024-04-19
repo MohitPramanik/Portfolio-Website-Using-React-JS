@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import C from "../Images/Programming Languages/c.png";
 import Cpp from "../Images/Programming Languages/cpp.png";
 import Html from "../Images/Programming Languages/html.png";
@@ -29,29 +29,7 @@ const Skills = () => {
         NodeJs,
     ];
 
-    const scrollArea = useRef(null);
-    const scrollBox = useRef(null);
-
     gsap.registerPlugin(ScrollTrigger, useGSAP);
-
-    useGSAP(() => {
-        const scrollLength =
-            scrollArea.current.scrollWidth - scrollBox.current.offsetWidth;
-
-        gsap.to(".scrollArea", {
-            x: -scrollLength,
-            duration: 6,
-            scrollTrigger: {
-                trigger: ".scrollArea",
-                scroller: scrollBox.current,
-                start: "center 160px",
-                end: "2000 320px",
-                scrub: 1,
-                markers: true,
-                pin: true,
-            },
-        });
-    });
 
     useGSAP(() => {
         gsap.from("#skills-heading", {
@@ -79,17 +57,26 @@ const Skills = () => {
                 scroller: "#app-component",
                 // once: true,
             },
-        })
-            .from(scrollBox.current, {
-                x: 100,
-                opacity: 0,
-                duration: 2,
-            })
-            .from(" #scroll-info", {
-                y: 100,
-                opacity: 0,
-            });
+        }).from(" #scroll-info", {
+            y: 100,
+            opacity: 0,
+        });
     });
+
+    useEffect(() => {
+        const scrollable = document.getElementById("scrollable");
+        scrollable.addEventListener(
+            "wheel",
+            (e) => {
+                if (e.wheelDelta > 0) {
+                    scrollable.scrollLeft -= 50;
+                } else {
+                    scrollable.scrollLeft += 50;
+                }
+            },
+            { passive: true }
+        );
+    }, []);
 
     return (
         <div
@@ -105,27 +92,25 @@ const Skills = () => {
                     My Skills
                 </h2>
             </div>
+
             <div className="h-full w-full lg:w-[80vw] flex justify-center items-center flex-col ">
-                <div
-                    className="h-80 w-[90%] lg:w-[80%] overflow-x-hidden right-scroller-section"
-                    ref={scrollBox}
-                >
-                    <div className="h-max w-full ">
-                        <div
-                            className="flex flex-nowrap w-max h-max scrollArea  pe-4 "
-                            ref={scrollArea}
-                        >
-                            {programmingLanguages.map((item, index) => (
-                                <div
-                                    className="h-[30vw] lg:h-[319px] w-auto"
-                                    key={index}
-                                >
-                                    <img src={item} className="h-full mx-6" />
-                                </div>
-                            ))}
-                        </div>
+                <div id="wrapper" className="w-[90%] h-max overflow-scroll">
+                    <div
+                        id="scrollable"
+                        className="flex flex-nowrap gap-5 w-max px-4 pb-5"
+                    >
+                        {programmingLanguages.map((item, index) => (
+                            <div key={index} className="h-[25vw]">
+                                <img
+                                    src={item}
+                                    alt="Loading error"
+                                    className="h-full w-full object-cover"
+                                />
+                            </div>
+                        ))}
                     </div>
                 </div>
+
                 <div
                     id="scroll-info"
                     className="text-md lg:text-xl text-center lg:mt-20 p-3"
