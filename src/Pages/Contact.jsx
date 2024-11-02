@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { MdEmail } from "react-icons/md";
 import { FaDownload } from "react-icons/fa6";
-import Resume from "../Pdfs/Resume.pdf";
+import Resume from "../Pdfs/MohitPramanik.pdf";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import linkButtons from "../Data-Files/LinkButtons";
